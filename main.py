@@ -1,13 +1,19 @@
+from datetime import datetime as dt
 
-def my_decorator(func):
+def time(func):
     def wrapper():
-        print("Line number is 1")
+        start = dt.now()
         func()
-        print("Line number is 3")
+        end = dt.now()
+
+        result_time = end - start
+        print(result_time)
     return wrapper()
 
-@my_decorator
+@time
 def test():
-    print("Line number is 2")
-
+    sum = 0
+    for i in range(100000000):
+        sum += i
+    print(sum)
 
