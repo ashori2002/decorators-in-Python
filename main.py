@@ -5,7 +5,9 @@ def my_decorator(func):
         func()
         print("Line number is 3")
     return wrapper()
+
+@my_decorator
 def test():
     print("Line number is 2")
 
-my_decorator(test)
+
